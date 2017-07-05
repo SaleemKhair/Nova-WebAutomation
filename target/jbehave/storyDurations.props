@@ -1,0 +1,9 @@
+#org.jbehave.core.embedder.StoryManager
+#Wed Jul 05 05:11:07 EEST 2017
+etsy_search.story=9000
+etsy_browse.story=9000
+testScenario.story=4000
+threads=1
+total=32000
+threadAverage=32000
+etsy_cart.story=10000

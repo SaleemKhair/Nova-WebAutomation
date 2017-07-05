@@ -1,0 +1,36 @@
+<story path="etsy_cart.story" title="ShoppingCart functionality for Etsy.com">
+<meta>
+<property keyword="@" name="category" value="basic"/>
+<property keyword="@" name="color" value="blue"/>
+</meta>
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="In order to">show the basic cart functionality</inOrderTo>
+  <asA keyword="As a">user</asA>
+  <iWantTo keyword="I want to">add and remove items from the cart</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="Item can be added to cart">
+<step outcome="failed" keyword="FAILED">Given that the cart is empty<failure>org.seleniumhq.selenium.fluent.FluentExecutionStopped: NoSuchElementException during invocation of: ?.within(secs(2)).div(By.id: cart)</failure></step>
+<step outcome="comment">!-- We don&apos;t care for which item is added to the cart</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I search for an item</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And an item is added to the cart</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then the cart contains that item</step>
+<failure>org.seleniumhq.selenium.fluent.FluentExecutionStopped: NoSuchElementException during invocation of: ?.within(secs(2)).div(By.id: cart)
+	at org.seleniumhq.selenium.fluent.Internal$BaseFluentWebDriver.wrapRuntimeException(Internal.java:1009)
+	at org.seleniumhq.selenium.fluent.Internal$BaseFluentWebDriver.executeAndWrapReThrowIfNeeded(Internal.java:1037)
+	at org.seleniumhq.selenium.fluent.Internal$BaseFluentWebDriver.single(Internal.java:886)
+	at org.seleniumhq.selenium.fluent.Internal$BaseFluentWebDriver.div(Internal.java:123)
+	at org.seleniumhq.selenium.fluent.FluentWebDriver.div(FluentWebDriver.java:136)
+	at com.nova.pages.Site.cartSize(Site.java:15)
+	at com.nova.steps.Steps.cartIsEmpty(Steps.java:62)
+	at com.nova.steps.Steps.cartIsEmptyAndOnStartPage(Steps.java:57)
+	(reflection-invoke)
+	at org.jbehave.core.steps.StepCreator$ParametrisedStep.perform(StepCreator.java:733)
+	at org.jbehave.core.embedder.PerformableTree$FineSoFar.run(PerformableTree.java:346)
+...</failure>
+</scenario>
+<scenario keyword="Scenario:" title="Item can be removed from cart">
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given the cart contains one item</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When the item is removed</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then the cart contents is empty</step>
+</scenario>
+</story>
